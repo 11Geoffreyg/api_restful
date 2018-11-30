@@ -43,10 +43,18 @@ app.get('/:id', function(req, res){
 		console.log("User Info By Id: " + JSON.stringify(user));
 		res.send(JSON.stringify(user));
 	});
+})
 
-
-
-
+/*
+Métode deleteUser
+*/
+app.delete('/deleteUser', function(req, res){
+	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
+		data = JSON.parse(data);
+		delete data["user" + 2];
+		console.log("Delete user" + data);
+		res.send(JSON.stringify(data));
+	});
 })
 
 let server = app.listen(8081, function (){
