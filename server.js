@@ -5,8 +5,8 @@ const fs = require ("fs");
 /*
 Method > listUsers
 */
-app.get('/mistUsers', function(req, res){
-	fs.readFile(_dirname + "/" + "users.json", 'utf8', function(err, data){
+app.get('/listUsers', function(req, res){
+	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
 		console.log(data);
 		res.send(data);
 	});
