@@ -32,6 +32,23 @@ app.post('/addUser', function(req, res){
 })
 
 
+/*
+Métode getUserById
+*/
+app.get('/getUserById', function(req, res){
+	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
+		if(err) throw err;
+		let users = JSON.parse(data);
+		let users = users["user" + req.params.id]
+		console.log("User Info By Id: " + JSON.stringify(user));
+		res.send(JSON.stringify(data));
+	});
+
+
+
+
+})
+
 let server = app.listen(8081, function (){
 	let host = server.address().address
 	let port = server.address().port
