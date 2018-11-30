@@ -35,7 +35,7 @@ app.post('/addUser', function(req, res){
 /*
 Métode getUserById
 */
-app.get('/getUserById', function(req, res){
+app.get('/:id', function(req, res){
 	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
 		if(err) throw err;
 		let users = JSON.parse(data);
