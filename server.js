@@ -7,7 +7,7 @@ let user = {
 	"password" : "password4",
 	"profession" : "teacher",
 	"id" : 4
-	},
+	}
 }
 
 /*
@@ -25,7 +25,7 @@ app.get('/listUsers', function(req, res){
 app.post('/addUser', function(req, res){
 	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
 		data = JSON.parse(data);
-		date["user4"] = user["user4"];
+		data["user4"] = user["user4"];
 		console.log(data);
 		res.send(JSON.stringify(data));
 	});
