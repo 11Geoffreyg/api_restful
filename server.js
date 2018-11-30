@@ -22,7 +22,7 @@ app.get('/listUsers', function(req, res){
 
 /*Méthode addUsers
 */
-app.post('/addUsers', function(req, res){
+app.post('/addUser', function(req, res){
 	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
 		data = JSON.parse(data);
 		date["user4"] = user["user4"];
