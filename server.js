@@ -41,7 +41,7 @@ app.get('/getUserById', function(req, res){
 		let users = JSON.parse(data);
 		let users = users["user" + req.params.id]
 		console.log("User Info By Id: " + JSON.stringify(user));
-		res.send(JSON.stringify(data));
+		res.send(JSON.stringify(user));
 	});
 
 
