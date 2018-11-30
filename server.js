@@ -1,9 +1,17 @@
 const express = require ('express');
 const app = express();
 const fs = require ("fs");
+let user = {
+		"user4" : {
+	"name" : "mohit",
+	"password" : "password4",
+	"profession" : "teacher",
+	"id" : 4
+	},
+}
 
 /*
-Method > listUsers
+Méthode > listUsers
 */
 app.get('/listUsers', function(req, res){
 	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
@@ -11,6 +19,18 @@ app.get('/listUsers', function(req, res){
 		res.send(data);
 	});
 })
+
+/*Méthode addUsers
+*/
+app.post('/addUsers', function(req, res){
+	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
+		data = JSON.parse(data);
+		date["user4"] = user["user4"];
+		console.log(data);
+		res.send(JSON.stringify(data));
+	});
+})
+
 
 let server = app.listen(8081, function (){
 	let host = server.address().address
