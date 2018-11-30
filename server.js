@@ -39,7 +39,7 @@ app.get('/:id', function(req, res){
 	fs.readFile(__dirname + "/" + "users.json", 'utf8', function(err, data){
 		if(err) throw err;
 		let users = JSON.parse(data);
-		let users = users["user" + req.params.id]
+		let user = users["user" + req.params.id]
 		console.log("User Info By Id: " + JSON.stringify(user));
 		res.send(JSON.stringify(user));
 	});
